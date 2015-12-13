@@ -1,0 +1,127 @@
+<html xmlns:tomboy="http://beatniksoftware.com/tomboy" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><title>3.0 EXISTING DESIGN</title><style type="text/css">
+        
+	body { font-family:'Ubuntu Mono'; }
+	h1 { font-size: xx-large;
+     	     font-weight: bold;
+     	     border-bottom: 1px solid black; }
+	div.note {
+		   position: relative;
+		   display: block;
+		   padding: 5pt;
+		   margin: 5pt; 
+		   white-space: -moz-pre-wrap; /* Mozilla */
+ 	      	   white-space: -pre-wrap;     /* Opera 4 - 6 */
+ 	      	   white-space: -o-pre-wrap;   /* Opera 7 */
+ 	      	   white-space: pre-wrap;      /* CSS3 */
+ 	      	   word-wrap: break-word;      /* IE 5.5+ */ }
+	</style></head><body><div class="note" id="3.0 EXISTING DESIGN"><a name="3.0 existing design"></a><h1>3.0 EXISTING DESIGN</h1>
+
+There are two databases - one for "campers" and one for "medications".
+
+
+
+<b>These are the acceptable routes for <a style="color:#3465A4" href="https://damp-anchorage-5607.herokuapp.com/">https://damp-anchorage-5607.herokuapp.com/</a></b>
+
+    camper_meds GET    <a style="color:#3465A4" href="/campers/:camper_id/meds(.:format)">/campers/:camper_id/meds(.:format)</a>     meds#index
+                POST   <a style="color:#3465A4" href="/campers/:camper_id/meds(.:format)">/campers/:camper_id/meds(.:format)</a>     meds#create
+ new_camper_med GET    <a style="color:#3465A4" href="/campers/:camper_id/meds/new(.:format)">/campers/:camper_id/meds/new(.:format)</a> meds#new
+       edit_med GET    <a style="color:#3465A4" href="/meds/:id/edit(.:format)">/meds/:id/edit(.:format)</a>               meds#edit
+            med GET    <a style="color:#3465A4" href="/meds/:id(.:format)">/meds/:id(.:format)</a>                    meds#show
+                PATCH  <a style="color:#3465A4" href="/meds/:id(.:format)">/meds/:id(.:format)</a>                    meds#update
+                PUT    <a style="color:#3465A4" href="/meds/:id(.:format)">/meds/:id(.:format)</a>                    meds#update
+                DELETE <a style="color:#3465A4" href="/meds/:id(.:format)">/meds/:id(.:format)</a>                    meds#destroy
+        campers GET    /campers(.:format)                     campers#index
+                POST   /campers(.:format)                     campers#create
+     new_camper GET    <a style="color:#3465A4" href="/campers/new(.:format)">/campers/new(.:format)</a>                 campers#new
+    edit_camper GET    <a style="color:#3465A4" href="/campers/:id/edit(.:format)">/campers/:id/edit(.:format)</a>            campers#edit
+         camper GET    <a style="color:#3465A4" href="/campers/:id(.:format)">/campers/:id(.:format)</a>                 campers#show
+                PATCH  <a style="color:#3465A4" href="/campers/:id(.:format)">/campers/:id(.:format)</a>                 campers#update
+                PUT    <a style="color:#3465A4" href="/campers/:id(.:format)">/campers/:id(.:format)</a>                 campers#update
+                DELETE <a style="color:#3465A4" href="/campers/:id(.:format)">/campers/:id(.:format)</a>                 campers#destroy
+           root GET    /                                      qb_auths#new
+
+
+
+<b>class CampersController</b>
+    &lt; ApplicationController &lt; ActionController::Base
+
+  Instance variables
+    campers - the Quickbase table containing camper information
+    camper  - a particular record in the campers database
+
+  Public Methods:
+
+    index - entry point to "campers", references the database
+            renders dropdown to select camper, Show, Edit, Destroy or New Camper 
+
+    show -  renders the fullname of the current camper 
+            and links to "Edit", "Back",
+
+    new  -  obtain reference to a new record and allow user to select a camper
+            also offers alternate links to elsewhere
+
+    edit  - renders the form to edit camper information
+            also renders Show and Back
+
+    create - determines if selected camper name is valid
+             then invokes either Show or New
+
+    update - determines if update to record was successful
+             then renders camper or Edit
+
+    destroy - delete a camper record from the database
+
+  Layouts:
+    only the top level "application" layout is used
+
+  Views:
+    edit, _form, index, new, show
+
+  Stylesheets:
+    campers, meds
+
+
+
+<b>class MedsController</b>
+    &lt; ApplicationController &lt; ActionController::Base
+
+  Instance variables
+    meds   - the Quickbase table containing medication information
+    med    - a particular record in the meds database
+    camper - a particular record in the campers database
+
+  Public Methods:
+
+    index - entry point to "meds", references the database
+            renders dropdown to select medication, Show, Edit, Destroy or New Med 
+
+    show -  renders information about this medication including
+            the camper associated with this medication and day/hour schedule
+            and offers links to elsewhere
+
+    new  -  obtain reference to a new record and allow user to select a medication
+            for the specified camper
+            offers alternate links to elsewhere
+
+    edit  - renders the form to edit medication information for the specified camper
+            including the day/hour schedule for the medication
+            offers alternate links to elsewhere
+
+    create - determines if selected medication is valid
+             then invokes either Show or New
+
+    update - determines if update to record was successful
+             then renders med or Edit
+
+    destroy - delete a medication record from the database
+
+  Layouts:
+    only the top level "application" layout is used
+
+  Views:
+    edit, _form, index, new, show
+
+  Stylesheets:
+    campers, meds
+
+</div></body></html>

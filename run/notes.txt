@@ -1,0 +1,58 @@
+#===============================================================================
+# HOW THIS WEBSITE PAGE WAS CREATED
+#===============================================================================
+Create a new repository:
+    https://github.com/kwegner7/special-camp 
+And the link will be:
+    http://kwegner7.github.io/special-camp
+
+cd /proj/special-camp
+git init
+git add . 
+git commit -m "Special Camp Project"
+
+Manually create https://github.com/kwegner7/special-camp from GitHub
+   click New Repository, then enter name "special-camp", then Create, then copy the link
+
+git remote add github https://github.com/kwegner7/special-camp.git
+git remote -v
+git push github master
+
+git branch gh-pages
+git checkout gh-pages
+git push -u github gh-pages
+
+    cd /media/kurt/8GB-BLUE4/repositories/git/website
+    git clone --mirror /proj/special-camp/.git
+    cd special-camp.git && git remote -v
+
+    cd /proj/special-camp
+    git remote add backup /media/kurt/8GB-BLUE4/repositories/git/website/special-camp.git 
+    git push -u backup gh-pages
+    git diff gh-pages backup/gh-pages
+
+
+
+#===============================================================================
+# HOW TO DOCUMENT THE PROPOSED:NEW SPECIAL CAMP
+#===============================================================================
+
+/proj/special-camp/publish
+   contains index.html and reference-documents.html
+/proj/special-camp/publish/docs
+   contains the reference pdf documents of interest
+/proj/special-camp/publish/tomboy
+   contains tomboy notes from the notebook "SPECIAL CAMP DESCRIPTION"
+
+rm -r /proj/special-camp/publish/tomboy
+Open the notebook "SPECIAL CAMP DESCRIPTION"
+From Tomboy Search - Tools - Export - Export Selected Notebook
+to /proj/special-camp/publish/tomboy
+
+file:///proj/special-camp/publish/index.html
+
+#===============================================================================
+# HOW TO RUN
+#===============================================================================
+
+ 
