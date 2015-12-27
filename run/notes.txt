@@ -1,35 +1,62 @@
+
+http://kwegner7.github.io/new-special-camp/publish
+file:///proj/special-camp/publish/index.html
+
+
 #===============================================================================
 # HOW THIS WEBSITE PAGE WAS CREATED
 #===============================================================================
+
 Create a new repository:
     https://github.com/kwegner7/special-camp 
 And the link will be:
     http://kwegner7.github.io/special-camp
 
-cd /proj/special-camp
-git init
-git add . 
-git commit -m "Special Camp Project"
+# Create a new .git folder here
+  cd /proj/special-camp
+  git init
+  git add . 
+  git commit -m "Special Camp Project"
 
-Manually create https://github.com/kwegner7/special-camp from GitHub
+# Manually create a new repository at GitHub
    click New Repository, then enter name "special-camp", then Create, then copy the link
 
-git remote add github https://github.com/kwegner7/special-camp.git
+https://github.com/kwegner7/new-special-camp.git
+
+# Add the new Github repository as a remote
+  git remote add github https://github.com/kwegner7/new-special-camp.git
+  git remote -v
+  git push github master
+
+# Create a branch so that GitHub will export and allow web pages
+  git branch gh-pages
+  git checkout gh-pages
+  git push -u github gh-pages
+
+# Create a backup repository on USB
+  cd /media/kurt/8GB-BLUE4/git
+  git clone --mirror /proj/special-camp/.git
+  cd special-camp.git && git remote -v
+      origin  /proj/special-camp/.git (fetch)
+      origin  /proj/special-camp/.git (push)
+
+# Add the new backup repository as a remote
+  cd /proj/special-camp
+  git remote add backup /media/kurt/8GB-BLUE4/git/special-camp.git 
+  git push -u backup gh-pages
+  git diff gh-pages backup/gh-pages
+
+# This simplifies the push commands
+  git push -u github gh-pages
+  git push -u backup gh-pages
+
 git remote -v
-git push github master
+git branch -v
 
-git branch gh-pages
-git checkout gh-pages
-git push -u github gh-pages
+git push github
+git push backup
 
-    cd /media/kurt/8GB-BLUE4/repositories/git/website
-    git clone --mirror /proj/special-camp/.git
-    cd special-camp.git && git remote -v
 
-    cd /proj/special-camp
-    git remote add backup /media/kurt/8GB-BLUE4/repositories/git/website/special-camp.git 
-    git push -u backup gh-pages
-    git diff gh-pages backup/gh-pages
 
 
 
