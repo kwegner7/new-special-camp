@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Databases</title>
+<link rel="stylesheet" type="text/css" href="css/standard.css">
+<style></style>
+</head>
+
+<body>
+
+<!-- ----------------------------------------------------------------------- -->
+<div class=main>
+<hr>
+<h1>Links to the Camp Administration Information System</h1>
+<hr>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>1. Campers Database:</h2> 
+        <div class="indent">
+        <table width=100%>
+          <thead hidden>
+          <tr>
+             <th width=70px>&nbsp;</th>
+             <th>&nbsp;</th>
+          </tr>
+          </thead>
+          <tfoot hidden>
+          <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+          </tr>
+          </tfoot>
+          <tbody id=campers></tbody>
+        </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>2. Medications Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=meds></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>3. Med Schedule Items Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=med_schedule></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>4. Aides Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=aides></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>5. Dorm + Care Groups Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=dorm_care></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>6. Responsibilities Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=responsibilities></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>7. Ideas/Suggestions Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=suggestions></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>8. Aide Assessment Forms Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=aide_assessment></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>9. Church Contacts Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=church_contacts></tbody>
+            </table>
+        </div>
+    </div>
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>10. Scholarship Requests Database:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=scholarship_requests></tbody>
+            </table>
+        </div>
+    </div>
+
+<!-- ----------------------------------------------------------------------- -->
+    <div class=centered>
+    <h2>11. Heroku Routes:</h2> 
+        <div class="indent">
+            <table width=100%>
+                <tbody id=heroku></tbody>
+            </table>
+        </div>
+    </div>
+
+<!-- ----------------------------------------------------------------------- -->
+</div>
+<script>var GLOBAL="Nary";</script>
+<script src="scripts/insert-links.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -----------------------------------------------------------------------
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+<p id="demo"></p>
+
+<script>
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+document.getElementById("demo").innerHTML = toCelsius(77);
+</script>
+
+THIS IS THE RESULT OF THE JAVASCRIPT
+<tr>
+  <td><span class="colorblack">(C2)</span></td>
+  <td><a class="goto" href="https://www.quickbase.com/db/bi8b6igq7?a=td" target="&quot;_blank&quot;">Campers Home</a></td>
+</tr>
+
+
+HOW TO MAKE TABLES
+<table>
+  <thead>
+  <tr>
+     <th>Month</th>
+     <th>Savings</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+      <td>Sum</td>
+      <td>$180</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+     <td>January</td>
+     <td>$100</td>
+  </tr>
+  <tr>
+      <td>February</td>
+      <td>$80</td>
+  </tr>
+  </tbody>
+</table>
+    <script>
+
+        function insertReferences(links, texts) {
+
+            var items = "<tr>"; var i; var letter = "D"
+            for (i = 0, j=1; i < links.length; i++, j++)
+            {
+                 var index = "<span class=colorblack>(" + letter + j.toString() + ")</span>";
+                 var href = "<a class=goto href=" + links[i] + " target=&quot;_blank&quot;>" + texts[i] + "</a>";
+
+                 items += "<td>" + index + "</td>";
+                 items += "<td>" + href  + "</td></tr>";
+            }
+            return items;
+        }
+
+        var links = [
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=1",
+            "https://www.quickbase.com/db/bi8b6igq7?a=td",
+            "https://www.quickbase.com/db/bi8b6igq7?a=dr&rid=516&rl=hir",
+
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=29",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=51",
+
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=52",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=54",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=32",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=50",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=48",
+
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=61",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=61&nv=1&v0=516",
+            "https://www.quickbase.com/db/bi8b6igw7?a=GenNewRecord",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=39",
+            "https://www.quickbase.com/db/bi8b6igq7?a=q&qid=24",
+        ];
+        var texts = [
+            "List All",
+            "Campers Home",
+            "Campers Home for a Selected Camper",
+
+            "All Campers, Parents, E-mail",
+            "All Campers, with Med Info",
+
+            "Campers Accepted, View/Edit Med Information", 
+            "Campers Accepted, alphabetized with e-mail addresses",
+            "Campers Accepted, grouped by Camper Care Group",
+            "Campers Accepted, grouped by Dorm Room",
+            "Campers Accepted, with Med Info",
+
+            "Select Specific Camper, with Med Info",
+            "Display Specific Camper, with Med Info",
+            "Add a Camper's Med to the Medications Database",
+            "Access/View Submitted Camper Profile Forms",
+            "Alphabetical list with contact info and camper care group",
+        ];
+        var items = "<tr>"; var i; var letter = "C"
+        for (i = 0, j=1; i < links.length; i++, j++)
+        {
+             var index = "<span class=colorblack>(" + letter + j.toString() + ")</span>";
+             var href = "<a class=goto href=" + links[i] + " target=&quot;_blank&quot;>" + texts[i] + "</a>";
+
+             items += "<td>" + index + "</td>";
+             items += "<td>" + href  + "</td></tr>";
+        }
+
+        /* innerHTML is the content between the tag open and close */
+        document.getElementById("campers").innerHTML = items;
+        /* document.getElementById("meds").innerHTML = items; */
+        document.getElementById("meds").innerHTML = insertReferences(links, texts);
+    </script>
+
+----------------------------------------------------------------------- -->
+
+
+
+
+
+
