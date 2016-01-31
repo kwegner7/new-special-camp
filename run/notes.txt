@@ -1,4 +1,55 @@
 #===============================================================================
+# How to move the git and reconnect to the backup remote
+#===============================================================================
+/proj/special-camp (moves to)
+/proj/special-camp/docs (from /proj/special-camp)
+/proj/special-camp/special-camp-bruce (from /proj/special-camp-bruce)
+/proj/special-camp/use-cases (from /proj/camp)
+
+cd /media/kurt/8GB-BLUE4/git/camp.git
+git remote remove origin 
+git remote add origin /proj/special-camp/use-cases/.git
+
+     cd /home/proj/special-camp
+cd /media/kurt/8GB-BLUE4/git/special-camp.git
+git remote remove origin 
+git remote add origin /proj/special-camp/doc/.git
+
+
+
+
+TO GET SSH-KEY:
+cd ~                 #Your home directory
+ssh-keygen -t rsa    #Press enter for all values
+
+Copy ~/.ssh/id_rsa.pub to the GitHub SSH-KEY
+
+git remote show github
+
+Push  URL: https://github.com/kwegner7/new-special-camp.git
+
+cd /proj/special-camp
+git remote show github 
+git remote set-url github git+ssh://git@github.com/kwegner7/new-special-camp.git
+
+    cd /home/proj/finance && git remote show github
+git remote set-url github git+ssh://git@github.com/kwegner7/finance.git
+
+    cd /home/proj/sabato && git remote show github
+git remote set-url github git+ssh://git@github.com/kwegner7/sabato.git
+
+    cd /home/proj/pictures && git remote show github
+git remote set-url github git+ssh://git@github.com/kwegner7/pictures.git
+
+    cd /home/proj/website && git remote show github
+git remote set-url github git+ssh://git@github.com/kwegner7/kwegner7.github.io
+
+    cd /home/proj/camp && git remote show github
+git remote set-url github git+ssh://git@github.com/kwegner7/camp.git
+
+
+
+#===============================================================================
 # special-camp.git is really new-special-camp.git
 # This is a description of the existing and new product, the
 # Camp Administration Information System
