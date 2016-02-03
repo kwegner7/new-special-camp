@@ -15,9 +15,6 @@ cd /media/kurt/8GB-BLUE4/git/special-camp.git
 git remote remove origin 
 git remote add origin /proj/special-camp/doc/.git
 
-
-
-
 TO GET SSH-KEY:
 cd ~                 #Your home directory
 ssh-keygen -t rsa    #Press enter for all values
@@ -70,6 +67,59 @@ This is the remote github repository:
 
 This is the remote backup repository:
    cd /media/kurt/8GB-BLUE4/git/special-camp.git
+
+#===============================================================================
+# CORRESPONDENCE
+#===============================================================================
+Hi Bruce,
+
+I have compiled a list of all web page links related to the existing Special
+Camp. Would you please review this list and help me to determine which links
+are used by which actors. For example:
+
+Health Supervisor references these links:
+      11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 2.5, 1.10, 2.7, 1.12
+
+From the Use Case pictures, I believe the actors are:
+    Camper Guardian
+    Care Group Lead
+    LA Bus Captain
+    Administrator
+    Health Supervisor
+    Aide
+    Recommender
+    Core Team Member
+    Aide Registrar
+    Aide Care Director
+    Camp Directors
+    Camper Care Director
+    Camper Registrar
+
+Here is a link to Kurt's Notes:
+
+    http://kwegner7.github.io/new-special-camp/publish/
+
+Click on "Links to QuickBase and Heroku"
+
+I should pause now and work on the print capability for the 2016 camp. And I
+want to improve it so that it can be tailored without changing the code each
+year. For example, it will allow specifying dates of the camp and QuickBase
+codes for the relevant tables that year.
+
+However, I want to also make progress on the Camp Administration. You have a
+list of Phase 1 Implementations. From this list, could you tell me which of
+these items you want me to do and are required for Special Camp 2016, and 
+which of these you want me to do and are not strictly required but would be
+nice to have.
+
+Thanks,
+Kurt
+
+
+
+
+    
+
     
 #===============================================================================
 # HOW THIS WEBSITE PAGE WAS CREATED
